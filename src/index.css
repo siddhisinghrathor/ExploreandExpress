@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-primary-green: #556F2D;
+  --color-deep-green: #3F5222;
+  --color-soft-sage: #A8B08D;
+  --color-muted-pink: #E4CDD3;
+  --color-soft-lavender: #DAD5E7;
+  --color-warm-ivory: #F7F4EE;
+  --color-body-text: #374038;
+}
+
+/* Base Styles */
+* {
+  font-family: "Cormorant Garamond", serif !important;
+  font-style: normal !important; /* Strictly no italics */
+}
+
+body {
+  background-color: #F7F4EE; /* Warm Ivory */
+  color: #374038; /* Body Text */
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F4EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #A8B08D;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #556F2D;
+}
+
+/* Paper texture effect */
+.paper-texture {
+  background-color: #F7F4EE;
+  background-image: 
+    radial-gradient(#374038 0.5px, transparent 0.5px), 
+    radial-gradient(#374038 0.5px, #F7F4EE 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  background-opacity: 0.02;
+  opacity: 0.98;
+}
+
+.paper-card {
+  background: #F7F4EE;
+  border: 1px solid rgba(85, 111, 45, 0.15);
+  box-shadow: 0 4px 20px -2px rgba(85, 111, 45, 0.05);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide animations if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-delay: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
